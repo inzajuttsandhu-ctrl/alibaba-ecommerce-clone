@@ -1,0 +1,125 @@
+.category-section {
+  display: flex;
+  padding: 0;
+  margin-bottom: 30px;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.category-banner {
+  flex: 0 0 280px;
+  background-size: cover;
+  background-position: center;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.category-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.category-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  z-index: 1;
+  max-width: 150px;
+}
+
+.category-banner .btn-white {
+  background: white;
+  color: var(--text-main);
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.category-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  border-left: 1px solid var(--border-gray);
+}
+
+.category-item-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-right: 1px solid var(--border-gray);
+  border-bottom: 1px solid var(--border-gray);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.category-item-card:hover {
+  background: #f8f9fa;
+}
+
+.category-item-card:nth-child(4n) {
+  border-right: none;
+}
+
+.category-item-card:nth-child(n+5) {
+  border-bottom: none;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.item-price-from {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.item-img {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 992px) {
+  .category-section {
+    flex-direction: column;
+  }
+  .category-banner {
+    flex: none;
+    height: 150px;
+    width: 100%;
+  }
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    border-left: none;
+  }
+}

@@ -1,0 +1,45 @@
+const { body } = require('express-validator');
+
+const registerValidation = [
+  body('name')
+    .trim()
+    .notEmpty().withMessage('Name is required')
+    .isLength({ min: 2, max: 100 }).withMessage('Name must be 2-100 characters'),
+  body('email')
+    .trim()
+    .notEmpty().withMessage('Email is required')
+    .isEmail().withMessage('Please enter a valid email'),
+  body('password')
+    .notEmpty().withMessage('Password is required')
+    .isLength({ min: 6 }).withMessage('Password must be at least 6 characters')
+];
+
+const loginValidation = [
+  body('email')
+    .trim()
+    .notEmpty().withMessage('Email is required')
+    .isEmail().withMessage('Please enter a valid email'),
+  body('password')
+    .notEmpty().withMessage('Password is required')
+];
+
+const productValidation = [
+  body('title')
+    .trim()
+    .notEmpty().withMessage('Title is required')
+    .isLength({ max: 200 }).withMessage('Title must be under 200 characters'),
+  body('description')
+    .trim()
+    .notEmpty().withMessage('Description is required'),
+  body('price')
+    .notEmpty().withMessage('Price is required')
+    .isFloat({ min: 0 }).withMessage('Price must be a positive number'),
+  body('category')
+    .trim()
+    .notEmpty().withMessage('Category is required'),
+  body('stockQuantity')
+    .optional()
+    .isInt({ min: 0 }).withMessage('Stock must be a non-negative integer')
+];
+
+module.exports = { registerValidation, loginValidation, productValidation };

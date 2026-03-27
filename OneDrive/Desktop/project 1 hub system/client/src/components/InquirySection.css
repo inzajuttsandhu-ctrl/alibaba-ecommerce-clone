@@ -1,0 +1,82 @@
+.inquiry-section {
+  margin-bottom: 30px;
+}
+
+.inquiry-bg {
+  background: linear-gradient(135deg, #127FFF 0%, #0067FF 100%), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200') center/cover;
+  background-blend-mode: overlay;
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.inquiry-content {
+  color: white;
+  max-width: 450px;
+}
+
+.inquiry-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.inquiry-content p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.inquiry-form-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background: white;
+}
+
+.inquiry-form-container h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.inquiry-form-container .form-group {
+  margin-bottom: 15px;
+}
+
+.inquiry-form-container .form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.inquiry-form-container input,
+.inquiry-form-container textarea,
+.inquiry-form-container select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.inquiry-form-container textarea {
+  resize: vertical;
+}
+
+.inquiry-form-container btn {
+  width: auto;
+}
+
+@media (max-width: 992px) {
+  .inquiry-bg {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .inquiry-form-container {
+    max-width: 100%;
+  }
+}

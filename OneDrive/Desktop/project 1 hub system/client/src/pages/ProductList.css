@@ -1,0 +1,262 @@
+.product-list-page {
+  padding: 20px 0 60px;
+  background: #f8f9fa;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.breadcrumbs a:hover {
+  color: var(--secondary);
+}
+
+.list-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-group {
+  border-top: 1px solid var(--border-gray);
+  padding-top: 15px;
+}
+
+.filter-group:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.filter-group h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-main);
+}
+
+.filter-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-group ul li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.filter-group ul li.active a,
+.filter-group ul li a:hover {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.see-all {
+  color: var(--secondary);
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.range-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.range-inputs .input-group {
+  flex: 1;
+}
+
+.range-inputs label {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.range-inputs input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+}
+
+/* Products Main */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sort-box select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.view-toggles {
+  display: flex;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.toggle-btn {
+  padding: 8px 12px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn.active {
+  background: #eee;
+  color: var(--text-main);
+}
+
+.active-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+  font-size: 14px;
+  background: white;
+}
+
+.filter-chip button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.clear-all {
+  background: none;
+  border: none;
+  color: var(--secondary);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Products Container */
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination select {
+  padding: 8px;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+}
+
+.pages {
+  display: flex;
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.page-btn {
+  padding: 8px 15px;
+  background: white;
+  border: none;
+  border-right: 1px solid var(--border-gray);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.page-btn.active {
+  background: #eee;
+  font-weight: 700;
+}
+
+.page-btn:last-child {
+  border-right: none;
+}
+
+.page-dots {
+  padding: 8px 10px;
+  color: var(--text-light);
+}
+
+@media (max-width: 992px) {
+  .list-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none; /* Hide sidebar on mobile for simplicity, or toggleable */
+  }
+}
+@media (max-width: 1200px) {
+  .grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
